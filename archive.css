@@ -1,0 +1,608 @@
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+
+body 
+  {background-color: rgb(255, 255, 255);
+   color: black;
+   font-family: "Ariel", sans-serif;
+   font-weight: 349}
+p
+  {line-height: 1.35;}
+ul
+  {line-height: 1.65;}
+#TableOfContents 
+  {background-color: rgb(247, 247, 247);
+   border: 1px solid rgb(220, 220, 220);
+   border-collapse: collapse;
+   line-height: 1.4;
+   margin-left: 5px;
+   margin-top: 20px;
+   padding: 12px;
+   padding-left: 15px;
+   padding-top: 7px;
+   width: 190px}
+#movewestyoungman
+  {padding: 10px;
+   padding-bottom: 0px}
+#math 
+  {border-top: 1px solid rgb(220, 220, 220);
+   padding-top: 10px}
+#social-studies 
+  {border-top: 1px solid rgb(220, 220, 220);
+   padding-top: 10px}
+#science 
+  {border-top: 1px solid rgb(220, 220, 220);
+   padding-top: 10px}
+#english 
+  {border-top: 1px solid rgb(220, 220, 220);
+   padding-top: 10px}
+#world-language  
+  {border-top: 1px solid rgb(220, 220, 220);
+   padding-top: 10px}
+#other 
+  {border-top: 1px solid rgb(220, 220, 220);
+   padding-top: 10px}
+.spanish 
+   {color: rgb(201, 158, 22);}
+.french 
+   {color: rgb(44, 85, 199);}
+a:hover 
+   {color: rgb(47, 100, 244);}
+
+
+/* Screen is in landscape */
+@media only screen and (orientation: landscape){
+
+#text-txt 
+  {margin: 10px;
+   margin-right: 15px;
+   margin-left: 166px;}
+
+/* Sidebar */
+.sidebar 
+  {height: 100%;
+   width: 155px;
+   position: fixed;
+   left: 0;
+   top: 0;
+   padding-top: 20px;
+   background-color: rgb(239, 239, 240);
+   border-right: 1px solid rgb(210,210,210);}
+#sidebar-title
+  {padding: 15px;
+   padding-top: 3px;
+   padding-left: 15px;
+   padding-right: 15px;
+   border-bottom: 1px solid rgb(210, 210, 210);
+   line-height: 1.1;
+   text-align: center;
+   font-size: 16.75px;
+   display: block;}
+#sanic 
+  {padding: 6px;
+   padding-left: 17.5px;
+   padding-right: 17.5px;
+   font-size: 16px;
+   display: block;}
+.collapsible
+  {overflow: hidden;
+   padding: 10px;
+   padding-left: 14px;
+   padding-right: 17px;
+   padding-top: 15px;
+   font-size: 17px;
+   border: 1px solid rgb(239, 239, 240);
+   display: block;}
+.navLinks a
+  {padding: 5px;
+   padding-left: 17.5px;
+   padding-top: 10px;
+   padding-bottom: 11px;
+   color: rgb(75,75,75);
+   font-size: 16px;
+   display: block;}
+.navLinks a:hover 
+  {background-color: rgb(230, 230, 231);}
+
+/* Table of Contents Button */
+.collapsibleTwo
+  {background-color: rgb(239,239,240);
+   color: black;
+   cursor: pointer;
+   padding: 8px;
+   width: 35%;
+   border: 1px solid rgb(220, 220, 220);
+   text-align: center;
+   outline: none;
+   font-size: 15px;
+   margin-left: 2px;}
+.active, .collapsibleTwo:hover 
+  {background-color: rgb(230, 230, 231);}
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;}
+
+/* Table Styling */
+table, th, td 
+  {background-color: rgb(247, 247, 248);
+   border: 1px solid rgb(220, 220, 220);
+   border-collapse: collapse;
+   margin-left: 5px;
+   padding: 7px;
+   line-height: 1.3;}
+table
+  {width: 90%;}
+th
+  {background-color: rgb(239, 239, 240);}
+
+/* Collapsible Tables */
+.collapsibleThree
+  {background-color: rgb(239,239,240);
+   color: black;
+   cursor: pointer;
+   padding-left: 8px;
+   padding-right: 8px;
+   width: 22%;
+   border: 1px solid rgb(220, 220, 220);
+   text-align: center;
+   outline: none;
+   font-size: 15px;
+   margin-left: 5px;}
+.active, .collapsibleThree:hover 
+  {background-color: rgb(230, 230, 231);}
+.contentTwo 
+  {max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;}
+}
+
+
+/* Screen is in portrait */
+@media only screen and (orientation: portrait) {
+
+#text-txt 
+  {margin: 10px;
+   margin-top: 130px;
+   margin-right: 15px;
+   margin-left: 10px;}
+
+/* Top Menu */
+.sidebar
+  {height: 105px;
+   width: 100%;
+   position: fixed;
+   left: 0;
+   top: 0;
+   padding-top: 12px;
+   background-color: rgb(239, 239, 240);
+   border-bottom: 1px solid rgb(210, 210, 210);}
+#sidebar-title
+  {float: left;
+   width: 100px; 
+   line-height: 1.2;
+   text-align: left;
+   padding-top: 6px;
+   font-size: 16.75px;
+   display: block;}
+#sanic 
+  {float: left;
+   padding: 6px;
+   padding-left: 17.5px;
+   padding-right: 10px;
+   font-size: 16px;
+   display: block;}
+#navigation
+  {float: top;
+   width: vmax;
+   text-align: right;
+   padding: 10px;
+   padding-left: 14px;
+   padding-right: 17px;
+   padding-top: 15px;
+   font-size: 16px;
+   display: block;}
+
+.collapsible 
+  {position: fixed; 
+   top: 15px;
+   right: 15px;
+   background-color: rgb(239,239,240);
+   color: black;
+   cursor: pointer;
+   padding: 8px;
+   width: 35%;
+   border: 1px solid rgb(220, 220, 220);
+   text-align: center;
+   outline: none;
+   font-size: 15px;
+   margin-left: 2px;}
+.active, .collapsible:hover 
+  {background-color: rgb(230, 230, 231);}
+.navLinks 
+  {position: fixed;
+   top: 55px;
+   right: 15px;
+   text-align: right;
+   display: block;
+   background-color: rgb(230, 230, 231);
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height 0.2s ease-out;}
+.navLinks a
+  {color: rgb(75,75,75);
+   padding-right: 15px;
+   padding-left: 15px;
+   padding-top: 10px;
+   padding-bottom: 11px;
+   line-height: 2.5;}
+.navLinks a:hover 
+  {background-color: rgb(239, 239, 240);}
+
+/* Table of Contents Button */
+.collapsibleTwo
+  {background-color: rgb(239,239,240);
+   color: black;
+   cursor: pointer;
+   padding: 8px;
+   width: 35%;
+   border: 1px solid rgb(220, 220, 220);
+   text-align: center;
+   outline: none;
+   font-size: 15px;
+   margin-left: 2px;}
+.active, .collapsibleTwo:hover 
+  {background-color: rgb(230, 230, 231);}
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;}
+  
+/* Table Styling */
+table, th, td 
+   {background-color: rgb(247, 247, 248);
+    border: 1px solid rgb(220, 220, 220);
+    border-collapse: collapse;
+    margin-left: 5px;
+    padding: 7px;
+    line-height: 1.3;}
+table
+   {width: 98%;
+   overflow-x: scroll;}
+th
+   {background-color: rgb(239,239,240);}
+
+/* Collapsible Tables */
+.collapsibleThree
+  {background-color: rgb(239,239,240);
+   color: black;
+   cursor: pointer;
+   padding-left: 8px;
+   padding-right: 8px;
+   width: 98%;
+   border: 1px solid rgb(220, 220, 220);
+   text-align: center;
+   outline: none;
+   font-size: 15px;
+   margin-left: 5px;}
+.active, .collapsibleThree:hover 
+  {background-color: rgb(230, 230, 231);}
+.contentTwo 
+  {max-height: 0;
+  overflow-x: scroll;
+  transition: max-height 0.2s ease-out;}
+}
+} 
+  
+
+
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+
+body 
+  {background-color: rgb(45, 45, 50);
+   color: rgb(245, 245, 245);
+   font-family: "Ariel", sans-serif;
+   font-weight: 349}
+#text-txt 
+  {margin: 10px;
+   margin-right: 15px;
+   margin-left: 166px}
+p
+  {line-height: 1.35;}
+#TableOfContents 
+  {background-color: rgb(40, 40, 45);
+   border: 1px solid rgb(75, 75, 80);
+   border-collapse: collapse;
+   line-height: 1.4;
+   margin-left: 5px;
+   margin-top: 20px;
+   padding: 12px;
+   padding-left: 15px;
+   padding-top: 7px;
+   width: 190px}
+#movewestyoungman
+  {padding: 10px;
+   padding-bottom: 0px}
+#math 
+  {border-top: 1px solid rgb(220, 220, 220);
+   padding-top: 10px}
+#social-studies 
+  {border-top: 1px solid rgb(220, 220, 220);
+   padding-top: 10px}
+#science 
+  {border-top: 1px solid rgb(220, 220, 220);
+   padding-top: 10px}
+#english 
+  {border-top: 1px solid rgb(220, 220, 220);
+   padding-top: 10px}
+#world-language  
+  {border-top: 1px solid rgb(220, 220, 220);
+   padding-top: 10px}
+#other 
+  {border-top: 1px solid rgb(220, 220, 220);
+   padding-top: 10px}
+.spanish 
+  {color: rgb(201, 158, 22);}
+.french 
+  {color: rgb(61, 113, 255);}
+a:link
+  {color: rgb(143, 180, 255)}
+a:visited
+  {color: rgb(188, 133, 255);}
+a:hover 
+  {color: rgb(92, 135, 255);}
+
+
+/* Screen is in landscape */
+@media only screen and (orientation: landscape){
+
+#text-txt 
+  {margin: 10px;
+   margin-right: 15px;
+   margin-left: 166px;}
+  
+ /* Sidebar */ 
+.sidebar 
+  {height: 100%;
+   width: 155px;
+   position: fixed;
+   left: 0;
+   top: 0;
+   padding-top: 20px;
+   background-color: rgb(40, 40, 45);
+   border-right: 1px solid rgb(75,75,80);}
+#sidebar-title
+  {padding: 15px;
+   padding-top: 3px;
+   padding-left: 15px;
+   padding-right: 15px;
+   border-bottom: 1px solid rgb(75,75,80);
+   line-height: 1.1;
+   text-align: center;
+   font-size: 16.75px;
+   display: block;}
+#sanic 
+  {padding: 6px;
+   padding-left: 17.5px;
+   padding-right: 17.5px;
+   font-size: 16px;
+   display: block;}
+.collapsible
+  {overflow: hidden;
+   padding: 10px;
+   padding-left: 14px;
+   padding-right: 17px;
+   padding-top: 15px;
+   color: rgb(245, 245, 245);
+   background-color: rgb(40, 40, 45);
+   border: 1px solid rgb(40, 40, 45);
+   font-size: 17px;
+   display: block;}
+.navLinks a
+  {padding: 5px;
+   padding-left: 17.5px;
+   padding-top: 10px;
+   padding-bottom: 11px;
+   color: rgb(245, 245, 245);
+   font-size: 16px;
+   display: block;}
+.navLinks a:hover 
+  {background-color: rgb(65,65,70);}
+
+/* Table of Contents Button */
+.collapsibleTwo 
+  {background-color: rgb(35, 35, 40);
+   color: rgb(245, 245, 245);
+   cursor: pointer;
+   padding: 8px;
+   width: 35%;
+   border: 1px solid rgb(75, 75, 80);
+   text-align: center;
+   outline: none;
+   font-size: 15px;
+   margin-left: 2px;}
+.active, .collapsibleTwo:hover 
+  {background-color: rgb(65, 65, 70);}
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+  
+/* Table Styling */
+table, th, td 
+  {background-color: rgb(40, 40, 45);
+   border: 1px solid rgb(75, 75, 80);
+   border-collapse: collapse;
+   margin-left: 5px;
+   padding: 7px;
+   line-height: 1.3;}
+table
+  {width: 90%;}
+th
+  {background-color: rgb(35, 35, 40);}
+
+/* Collapsible Tables */
+.collapsibleThree
+  {background-color: rgb(35, 35, 40);
+   color: rgb(245, 245, 245);
+   cursor: pointer;
+   padding-left: 8px;
+   padding-right: 8px;
+   width: 22%;
+   border: 1px solid rgb(75, 75, 80);
+   text-align: center;
+   outline: none;
+   font-size: 15px;
+   margin-left: 5px;}
+.active, .collapsibleThree:hover 
+  {background-color: rgb(65, 65, 70);}
+.contentTwo 
+  {max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;}
+  
+}
+
+/* Screen is in portrait */
+@media only screen and (orientation: portrait) {
+
+#text-txt 
+  {margin: 10px;
+   margin-top: 130px;
+   margin-right: 15px;
+   margin-left: 10px;}
+
+/* Top Menu */
+.sidebar
+  {height: 105px;
+   width: 100%;
+   position: fixed;
+   left: 0;
+   top: 0;
+   padding-top: 12px;
+   background-color: rgb(40, 40, 45);
+   border-bottom: 1px solid rgb(75, 75, 80);}
+#sidebar-title
+  {float: left;
+   width: 100px; 
+   line-height: 1.2;
+   text-align: left;
+   padding-top: 6px;
+   font-size: 16.75px;
+   display: block;}
+#sanic 
+  {float: left;
+   padding: 6px;
+   padding-left: 17.5px;
+   padding-right: 10px;
+   font-size: 16px;
+   display: block;}
+#navigation
+  {float: top;
+   width: vmax;
+   text-align: right;
+   padding: 10px;
+   padding-left: 14px;
+   padding-right: 17px;
+   padding-top: 15px;
+   font-size: 16px;
+   display: block;}
+
+.collapsible 
+  {position: fixed; 
+   top: 15px;
+   right: 15px;
+   background-color: rgb(35, 35, 40);;
+   color: rgb(245, 245, 245);
+   cursor: pointer;
+   padding: 8px;
+   width: 35%;
+   border: 1px solid rgb(75, 75, 80);
+   text-align: center;
+   outline: none;
+   font-size: 15px;
+   margin-left: 2px;}
+.active, .collapsible:hover 
+  {background-color: rgb(65, 65, 70);}
+.navLinks 
+  {position: fixed;
+   top: 55px;
+   right: 15px;
+   text-align: right;
+   display: block;
+   background-color: rgb(65, 65, 70);
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height 0.2s ease-out;}
+.navLinks a
+  {color: rgb(245,245,245);
+   padding-right: 15px;
+   padding-left: 15px;
+   padding-top: 10px;
+   padding-bottom: 11px;
+   line-height: 2.5;}
+.navLinks a:hover 
+  {background-color: rgb(50, 50, 55);}
+
+/* Table of Contents Button */
+.collapsibleTwo 
+  {background-color: rgb(35, 35, 40);
+   color: rgb(245, 245, 245);
+   cursor: pointer;
+   padding: 8px;
+   width: 35%;
+   border: 1px solid rgb(75, 75, 80);
+   text-align: center;
+   outline: none;
+   font-size: 15px;
+   margin-left: 2px;}
+.active, .collapsibleTwo:hover 
+  {background-color: rgb(65, 65, 70);}
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+/* Table Styling */
+table, th, td 
+  {background-color: rgb(40, 40, 45);
+   border: 1px solid rgb(75, 75, 80);
+   border-collapse: collapse;
+   margin-left: 5px;
+   padding: 7px;
+   line-height: 1.3;}
+table
+  {width: 98%;}
+th
+  {background-color: rgb(35, 35, 40);}
+
+/* Collapsible Tables */
+.collapsibleThree
+  {background-color: rgb(35, 35, 40);
+   color: rgb(245, 245, 245);
+   cursor: pointer;
+   padding-left: 8px;
+   padding-right: 8px;
+   width: 98%;
+   border: 1px solid rgb(75, 75, 80);
+   text-align: center;
+   outline: none;
+   font-size: 15px;
+   margin-left: 5px;}
+.active, .collapsibleThree:hover 
+  {background-color: rgb(65, 65, 70);}
+.contentTwo 
+  {max-height: 0;
+  overflow-x: scroll;
+  transition: max-height 0.2s ease-out;}
+}
+
+}

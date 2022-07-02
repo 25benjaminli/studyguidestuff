@@ -7,7 +7,8 @@
     <title>Study Guides</title>
     <style>
     </style>
-    <link href="archive.css" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename = 'css/archive.css') }}" rel="stylesheet" type="text/css" />
+
   </head>
 
   <body>
@@ -34,6 +35,7 @@
       <li><a href="#other">Other</a></li>
         <!--<p><a href="#othergr8">Grade 8</a> | <a href="#othergr9">Grade 9</a></p>-->
     </ul></div></div>
+    <a href = '/submit-item' class = "cool_button">Test</a>
 
 
 
@@ -1590,10 +1592,11 @@ https://github.com/benjason921/periodic_table">Molar Mass Calculator</a></td>
       <button type="button" class="collapsible"><strong>Navigation</strong></button> 
       <div class="navLinks">
       <div><a href="/">Homepage</a></div>
-      <div><a href="/archive.html">Study Guide Archive</a></div>
-      <div><a href="/resources.html">Resources</a></div>
+      <div><a href="/archive">Study Guide Archive</a></div>
+      <div><a href="/resources">Resources</a></div>
       <div><a href="https://discord.com/channels/753010217389785258/753010955922833578" target="_blank">Mostly Serious Study Server (Discord)</a></div>
     </div></div>
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename = 'js/script.js') }}"></script>
+
   </body>
 </html>

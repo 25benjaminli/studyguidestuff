@@ -1,6 +1,30 @@
 /* Light Mode */
 @media (prefers-color-scheme: light) {
 
+  a.cool_button{
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #FFFFFF;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: #005b96;
+    font-family: Arvo;
+    font-weight: 300;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.3s;
+    font-size: 18px;
+    box-shadow: 0px 3px 8px 0px rgb(254, 254, 254);
+  }
+  
+  a.cool_button:hover{
+    cursor: pointer;
+    color: #000000;
+    background-color: white;
+  }
+  
 body 
   {background-color: rgb(255, 255, 255);
    color: black;

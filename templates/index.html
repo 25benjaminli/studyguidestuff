@@ -7,7 +7,7 @@
     <title>Mostly Serious Study Server</title>
     <style>
     </style>
-    <link href="index.css" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename = 'css/index.css') }}" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <div id="text-txt"><h1>Mostly Serious Study Server</h1>
@@ -58,11 +58,13 @@
       <div id=sidebar-title><strong>Mostly Serious Study Server</strong></div>
       <button type="button" class="collapsible"><strong>Navigation</strong></button> 
       <div class="navLinks">
-      <div><a href="/index.html">Homepage</a></div>
-      <div><a href="/archive.html">Study Guide Archive</a></div>
-      <div><a href="/resources.html">Resources</a></div>
+      <div><a href="/">Homepage</a></div>
+      <div><a href="/archive">Study Guide Archive</a></div>
+      <div><a href="/resources">Resources</a></div>
       <div><a href="https://discord.com/channels/753010217389785258/753010955922833578" target="_blank">Mostly Serious Study Server (Discord)</a></div></div>
     </div></div>
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename = 'js/script.js') }}"></script>
+
+
   </body>
 </html>

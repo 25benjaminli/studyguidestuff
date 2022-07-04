@@ -20,10 +20,14 @@
       {% for i in info %}
         {% set name = i[0] %}
         {% set rows = i[1] %}
+        <!-- <h1>{{name}}</h1> -->
+
+        <button type="button" class="collapsibleThree"><h3>{{name}}</h3></button> 
+        <div class = "contentTwo">
         <table>
-        <h1>{{name}}</h1>
+        
         <tr>
-          <th>Type</th>
+          <th>Title</th>
           <th>Type</th>
           <th>Creators(s)</th>
         </tr>
@@ -35,6 +39,8 @@
           </tr>
         {% endfor %}
         </table>
+        </div>
+        <br>
       {% endfor %}
     
 

@@ -21,7 +21,7 @@ def wipeEverything():
     wipeRows()
     wipeSubjects()
 
-def processInfo(subjectName, title, typ, contributors):
+def processInfo(subjectName, title, url, typ, contributors):
     # create subject if it doesn't exist
     subjectId = 0
     zz = conn.execute("SELECT COUNT(subjectName) FROM subject WHERE subjectName = \"" + str(subjectName) + "\"").fetchone()[0]
@@ -54,7 +54,7 @@ def processInfo(subjectName, title, typ, contributors):
     print("hiel")
     # printAllRows()
 
-    conn.execute("INSERT INTO row values(NULL, ?, ?, ?, ?)", (str(title), str(typ), str(contributors), str(subjectId)))
+    conn.execute("INSERT INTO row values(NULL, ?, ?, ?, ?, ?)", (str(title), str(url), str(typ), str(contributors), str(subjectId)))
 
     conn.commit()
 

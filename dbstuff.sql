@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS `subject`;
 CREATE TABLE `row` (
     `rowId` INTEGER PRIMARY KEY AUTOINCREMENT,
     `title` varchar(128) NOT NULL,
+    `url` varchar(128) NOT NULL,
     `type` varchar(128) NOT NULL,
     `contributors` varchar(128) NOT NULL,
     `subjectId` varchar(128) NOT NULL

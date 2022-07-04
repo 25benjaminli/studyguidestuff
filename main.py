@@ -61,11 +61,12 @@ def submit():
     if request.method == 'POST':
         subject = request.form['subject']
         title = request.form['title']
+        url = request.form['url']
         typ = request.form['type']
         contributors = request.form['contributors']
         print(subject, title, typ, contributors)
         # create a row under the specified subject.
-        logic.processInfo(subject, title, typ, contributors) 
+        logic.processInfo(subject, title, url, typ, contributors) 
         return redirect('/archive')
     elif request.method == 'GET':
         return render_template('submit-item.html')

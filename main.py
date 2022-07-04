@@ -33,12 +33,23 @@ def index():
     # logic.processInfo("")
     logic.getAllCells("english")
     logic.getAllCells("math")
+    logic.getAllCells("science")
+
 
     return render_template('index.html')
 
 @app.route('/archive', methods = ['GET'])
 def archive():
-    return render_template('archive.html')
+    # logic.wipeRows()
+    # logic.wipeSubjects()
+    # logic.wipeEverything()
+    # logic.printAllRows()
+    info = logic.getEverything()
+
+    return render_template('archive.html', info = info)
+# @app.route('/archive-test', method = ['GET', 'POST'])
+# def archivetest():
+    
 
 @app.route('/resources', methods = ['GET'])
 def resources():
@@ -46,14 +57,16 @@ def resources():
 
 @app.route('/submit-item', methods = ['GET', 'POST'])
 def submit():
+    # logic.wipeRows()
     if request.method == 'POST':
         subject = request.form['subject']
         title = request.form['title']
         typ = request.form['type']
         contributors = request.form['contributors']
+        print(subject, title, typ, contributors)
         # create a row under the specified subject.
         logic.processInfo(subject, title, typ, contributors) 
-
+        return redirect('/archive')
     elif request.method == 'GET':
         return render_template('submit-item.html')
 

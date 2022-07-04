@@ -16,6 +16,27 @@
     <p>The purpose of this webpage is to archive all available study material on the Mostly Serious Study Server for future reference & use. A big thank you to everyone who contributed to the study server and made our community possible. Feel free to make suggestions or corrections to this webpage in the suggestions channel of the server! (The latest versions of study guides will be used)</p>
     
 
+      
+      {% for i in info %}
+        {% set name = i[0] %}
+        {% set rows = i[1] %}
+        <table>
+        <h1>{{name}}</h1>
+        <tr>
+          <th>Type</th>
+          <th>Type</th>
+          <th>Creators(s)</th>
+        </tr>
+        {% for r in rows %}
+          <tr>
+            <td>{{r[1]}}</td>
+            <td>{{r[2]}}</td>
+            <td>{{r[3]}}</td>
+          </tr>
+        {% endfor %}
+        </table>
+      {% endfor %}
+    
 
     <!-- Table of Contents -->
     <div id="TableOfContents"><h3>Table of Contents</h3>

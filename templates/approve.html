@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approve Moderator</title>
+    <link href="{{ url_for('static', filename = 'css/archive.css') }}" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <form action = '/sign-up' method = 'POST'>
+        <p>Enter the email of the person you would like to approve.</p>
+        <input type = "text" name = "email">
+        <br>
+        <input type = "submit">
+    </form>
+</body>
+</html>

@@ -1,6 +1,8 @@
 DROP TABLE IF EXISTS `cell`;
 DROP TABLE IF EXISTS `row`;
 DROP TABLE IF EXISTS `subject`;
+DROP TABLE IF EXISTS `moderator`;
+
 --   UPDATE `sqlite_sequence` SET `seq` = 0 WHERE `name` = 'cell'
 
 CREATE TABLE `row` (
@@ -18,6 +20,13 @@ CREATE TABLE `subject` (
     `subjectId` INTEGER PRIMARY KEY NOT NULL,
     `subjectName` varchar(128) NOT NULL
 
+);
+
+CREATE TABLE `moderator` (
+    `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+    `email` varchar(128) NOT NULL,
+    `passw` varchar(256) NOT NULL,
+    `isapproved` tinyint DEFAULT 0
 );
 
 -- INSERT INTO subject values ('english', ?);

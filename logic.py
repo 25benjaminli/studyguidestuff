@@ -1,4 +1,14 @@
+from flask import Flask, render_template, request, redirect, url_for, flash
+
 import sqlite3
+import os
+from werkzeug.utils import secure_filename
+
+from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.exceptions import HTTPException
+
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user
 
 conn = sqlite3.connect('database.db', check_same_thread = False)
 
@@ -92,7 +102,22 @@ def getEverything():
     
 
 
+def checkEmail(email):
+    appr = int(conn.execute("SELECT isapproved FROM moderator WHERE email = ?", ((email),)).fetchone()[0])
+    modId = int(conn.execute("SELECT id FROM moderator WHERE email = ?", ((email),)).fetchone()[0])
+
+    print("isapproved: " + str(appr))
+    print("modid: " + str(modId))
+
+    return (appr, modId)
+
+
+def createAndAuth(email, passw):
+    conn.execute("INSERT INTO moderator values (NULL, ?, ?, ?)", ((email), (generate_password_hash(passw, method="sha256")), (1)))
+    conn.commit()
+
+def getPassHash(email):
+    x = conn.execute("SELECT passw FROM moderator WHERE email = ?", ((email),)).fetchone()[0]
+    print("x: " + x)
+    return x
     
-
-
-        

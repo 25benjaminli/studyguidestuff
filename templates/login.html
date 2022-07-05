@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename = 'css/archive.css') }}" rel="stylesheet" type="text/css" />
+    <title>Login</title>
+</head>
+<body>
+    <h1>USE YOUR MILLBURN ACCOUNT</h1>
+    <form action = "/login" method = "POST">
+        <p>Email</p>
+        <input type = "text" name = "email">
+        <br>
+        <p>Password - safely stored in database with hashing and stuff!</p>
+        <input type = "password" name = "password">
+        <br>
+        <input type = "submit">
+    </form>
+</body>
+</html>

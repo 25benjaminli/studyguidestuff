@@ -2,12 +2,10 @@
 
 This is a study guide website. 
 
-Goals:
-- Submit a study guide or study material
-- Will be reviewed by mods
-- Will display dynamically on the web page
+Anybody can submit a request for a study guide material (e.g. a quizlet with a link for science). This is mainly to avoid spamming and abuse of the webpage, but if you think it is unnecessary and just want it to update automatically without request system, the "norequest" branch will have stuff.
 
-Thanks to Henry Li for writing the basis of the website and the frontend design. I'm hoping that I can get the dynamic stuff done before the end of summer so we can get it out before school starts in the fall!
+Moderators accept these requests from a homepage. 
 
+Accepted requests are stored in the database and displayed on the web page under subject categories in a neat way.
 
-
+Moderators are “approved” by other moderators (application process). E.g. an admin acct approves a request for a moderator account. 

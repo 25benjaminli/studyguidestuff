@@ -182,6 +182,10 @@ def submit():
     elif request.method == 'GET':
         return render_template('submit-item.html')
 
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect('/archive')
 
 if __name__ == '__main__':
     app.jinja_env.cache = {}

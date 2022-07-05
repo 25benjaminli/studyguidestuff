@@ -64,7 +64,7 @@ def processInfo(subjectName, title, url, typ, contributors):
     print("hiel")
     # printAllRows()
 
-    conn.execute("INSERT INTO row values(NULL, ?, ?, ?, ?, ?)", (str(title), str(url), str(typ), str(contributors), str(subjectId)))
+    conn.execute("INSERT INTO row values(NULL, ?, ?, ?, ?, ?, ?)", (str(title), str(url), str(typ), str(contributors), str(subjectId), str(0)))
 
     conn.commit()
 
@@ -90,9 +90,11 @@ def getEverything():
     print(rows)
     arr = [] # hold subject name
     for (sid, sname) in zip(subjects, subjectNames):
-        print(sid, sname)
-        r = conn.execute("SELECT * FROM row WHERE subjectId = " + str(sid[0])).fetchall()
-        arr.append([sname[0], (r)])
+        if int(conn.execute("SELECT COUNT(*) FROM row WHERE isaccepted = 1 AND subjectId = " + str(sid[0])).fetchone()[0]) == 1:
+            # if it is accepted
+            print(sid, sname)
+            r = conn.execute("SELECT * FROM row WHERE subjectId = " + str(sid[0])).fetchall()
+            arr.append([sname[0], (r)])
     
     print(arr)
     

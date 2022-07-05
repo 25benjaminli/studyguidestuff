@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Logged In</title>
+    <link href="{{ url_for('static', filename = 'css/archive.css') }}" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
     <a href = "/logout">Log out</a>
     <p>YOU LOGGED IN. NOW SLEEP YA SCUMBAG</p>
+    <table>
+    <tr>
+        <th>Title</th>
+        <th>Url</th>
+        <th>Type</th>
+        <th>Contributors</th>
+    </tr>
+    {% for r in rs %}
+        {% set id = r[0] %}
+
+        {% set title = r[1] %}
+        {% set url = r[2] %}
+        {% set type = r[3] %}
+        {% set contributors = r[4] %}
+        {% set isaccepted = r[6] %}
+
+        {% if isaccepted == 0 %}
+        <tr>
+            <td><a href = "/accept/{{id}}">Accept id {{id}}</a></td>
+            <td>{{title}}</td>
+            <td>{{url}}</td>
+            <td>{{type}}</td>
+            <td>{{contributors}}</td>
+        </tr>
+        {% endif %}
+    {% endfor %}
+    </table>
+
 </body>
 </html>

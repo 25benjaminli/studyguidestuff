@@ -89,7 +89,9 @@ def loggedin():
     if request.method == 'POST':
         pass
     else:
-        return render_template('loggedin.html')
+        rs = conn.execute("SELECT * FROM row").fetchall()
+        print(rs)
+        return render_template('loggedin.html', rs = rs)
 
 @app.route('/approve-mod', methods = ['GET', 'POST'])
 @login_required
@@ -109,11 +111,14 @@ def approve():
         db.session.commit()
         # print("c")
         return redirect('/archive')
-        
-
-
     else:
         return render_template("approve.html")
+
+@app.route('/accept/<int:id>')
+def accept(id):
+    conn.execute("UPDATE row SET isaccepted = 1 WHERE rowId = " + str(id))
+    conn.commit()
+    return redirect('/logged_in')
 
 @app.route('/sign-up', methods = ['GET', 'POST'])
 def signup():

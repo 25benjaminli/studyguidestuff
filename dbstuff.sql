@@ -11,8 +11,8 @@ CREATE TABLE `row` (
     `url` varchar(128) NOT NULL,
     `type` varchar(128) NOT NULL,
     `contributors` varchar(128) NOT NULL,
-    `subjectId` varchar(128) NOT NULL
-
+    `subjectId` varchar(128) NOT NULL,
+    `isaccepted` tinyint DEFAULT 0
 );
 
 

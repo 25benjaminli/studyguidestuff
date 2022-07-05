@@ -95,13 +95,23 @@ def loggedin():
 @login_required
 def approve():
     if request.method == 'POST':
+        # print("a")
         email = request.form['email']
         conn.execute("UPDATE moderator SET isapproved = 1 WHERE email = ?", ((email), ))
         conn.commit()
+        # print("b")
+
         idthing = int(conn.execute("SELECT id FROM moderator WHERE email = ?", ((email),)).fetchone()[0])
+        # print("c")
+        
         newmod = User(email = email, id = idthing)
         db.session.add(newmod)
         db.session.commit()
+        # print("c")
+        return redirect('/archive')
+        
+
+
     else:
         return render_template("approve.html")
 
@@ -111,11 +121,13 @@ def signup():
         email = request.form['email']
         passwHash = generate_password_hash(request.form['password'], method = "sha256")
         
-        conn.execute("INSERT INTO moderator values (NULL, ?, ?)", (email, passwHash))
+        conn.execute("INSERT INTO moderator values (NULL, ?, ?, ?)", (email, passwHash, 0))
         conn.commit()
+
+        return redirect('/archive')
         
     else:
-        pass
+        return render_template('signup.html')
 def createAndAuth(email, passw):
     conn.execute("INSERT INTO moderator values (NULL, ?, ?, ?)", ((email), (generate_password_hash(passw, method="sha256")), (1)))
     conn.commit()
@@ -150,6 +162,7 @@ def archive():
     # logic.wipeSubjects()
     # logic.wipeEverything()
     # logic.printAllRows()
+    # print(conn.execute('SELECT * FROM moderator').fetchall())
     info = logic.getEverything()
     # wipeAccounts()
     

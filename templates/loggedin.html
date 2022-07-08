@@ -13,10 +13,11 @@
     <p>YOU LOGGED IN. NOW SLEEP YA SCUMBAG</p>
     <table>
     <tr>
+        <th>Accept request</th>
         <th>Title</th>
-        <th>Url</th>
-        <th>Type</th>
-        <th>Contributors</th>
+        <th>URL</th>
+        <th>Type of Resource</th>
+        <th>Contributor(s)</th>
     </tr>
     {% for r in rs %}
         {% set id = r[0] %}
@@ -25,17 +26,17 @@
         {% set url = r[2] %}
         {% set type = r[3] %}
         {% set contributors = r[4] %}
-        {% set isaccepted = r[6] %}
 
-        {% if isaccepted == 0 %}
+        
         <tr>
             <td><a href = "/accept/{{id}}">Accept id {{id}}</a></td>
+            <!-- <td>/accept/{{id}}</td> -->
             <td>{{title}}</td>
             <td>{{url}}</td>
             <td>{{type}}</td>
             <td>{{contributors}}</td>
         </tr>
-        {% endif %}
+        
     {% endfor %}
     </table>
 

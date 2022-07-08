@@ -81,7 +81,7 @@ def editSubjWithId(id):
 def getEverything():
     subjects = conn.execute("SELECT subjectId FROM subject").fetchall()
     subjectNames = conn.execute("SELECT subjectName FROM subject").fetchall()
-    rows = conn.execute("SELECT * FROM row").fetchall()
+    rows = conn.execute("SELECT * FROM row WHERE isaccepted = 1").fetchall()
     print("subjects:")
     print(subjects)
     print("names:")
@@ -90,11 +90,13 @@ def getEverything():
     print(rows)
     arr = [] # hold subject name
     for (sid, sname) in zip(subjects, subjectNames):
-        if int(conn.execute("SELECT COUNT(*) FROM row WHERE isaccepted = 1 AND subjectId = " + str(sid[0])).fetchone()[0]) == 1:
+        print("hihihih")
+        print(str(sid) + " " + str(sname))
+        # if int(conn.execute("SELECT COUNT(*) FROM row WHERE subjectId = " + str(sid[0])).fetchone()[0]) == 1:
             # if it is accepted
-            print(sid, sname)
-            r = conn.execute("SELECT * FROM row WHERE subjectId = " + str(sid[0])).fetchall()
-            arr.append([sname[0], (r)])
+        # print(sid, sname)
+        r = conn.execute("SELECT * FROM row WHERE subjectId = " + str(sid[0]) + " AND isaccepted = 1").fetchall()
+        arr.append([sname[0], (r)])
     
     print(arr)
     

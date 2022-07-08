@@ -86,10 +86,11 @@ def login():
 @app.route('/logged_in', methods = ["GET", "POST"])
 @login_required
 def loggedin():
+    # logic.wipeEverything()
     if request.method == 'POST':
         pass
     else:
-        rs = conn.execute("SELECT * FROM row").fetchall()
+        rs = conn.execute("SELECT * FROM row WHERE isaccepted = 0").fetchall()
         print(rs)
         return render_template('loggedin.html', rs = rs)
 
@@ -165,11 +166,14 @@ def wipeAccounts():
 def archive():
     # logic.wipeRows()
     # logic.wipeSubjects()
-    # logic.wipeEverything()
+    logic.wipeEverything()
     # logic.printAllRows()
-    # print(conn.execute('SELECT * FROM moderator').fetchall())
-    info = logic.getEverything()
     # wipeAccounts()
+
+    print("printing mods")
+    print(conn.execute('SELECT * FROM moderator').fetchall())
+    
+    info = logic.getEverything()
     
     
     # createAndAuth("25benjaminli@gmail.com", "test")
@@ -207,5 +211,5 @@ def logout():
 
 if __name__ == '__main__':
     app.jinja_env.cache = {}
-    app.run(debug = True, host = "0.0.0.0", threaded = True) 
+    app.run(debug = True) 
 

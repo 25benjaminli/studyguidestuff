@@ -30,12 +30,14 @@
         <table>
         
         <tr>
+          <th>ID</th>
           <th>Title</th>
           <th>Type</th>
           <th>Creators(s)</th>
         </tr>
         {% for r in rows %}
           <tr>
+            <td>{{r[0]}}</td>
             <td><a href ={{r[2]}} target = "_blank">{{r[1]}}</a></td>
             <td>{{r[3]}}</td>
             <td>{{r[4]}}</td>

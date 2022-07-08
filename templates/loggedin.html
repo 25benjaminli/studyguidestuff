@@ -10,9 +10,10 @@
 </head>
 <body>
     <a href = "/logout">Log out</a>
-    <p>YOU LOGGED IN. NOW SLEEP YA SCUMBAG</p>
+    <!-- <p>YOU LOGGED IN. NOW SLEEP YA SCUMBAG</p> -->
     <table>
     <tr>
+        <th>ID</th>
         <th>Accept request</th>
         <th>Title</th>
         <th>URL</th>
@@ -31,6 +32,8 @@
         <tr>
             <td><a href = "/accept/{{id}}">Accept id {{id}}</a></td>
             <!-- <td>/accept/{{id}}</td> -->
+            <td>{{id}}</td>
+            
             <td>{{title}}</td>
             <td>{{url}}</td>
             <td>{{type}}</td>

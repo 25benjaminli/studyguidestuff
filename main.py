@@ -29,7 +29,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['ARCHIVED_FOLDER'] = "static/archived_files"
 
 login_manager = LoginManager(app)
-login_manager.login_view = 'archive'
+login_manager.login_view = 'login'
 # login_manager.init_app(app)
 
 class User(UserMixin, db.Model):

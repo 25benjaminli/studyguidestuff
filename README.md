@@ -9,3 +9,9 @@ Moderators accept these requests from a homepage.
 Accepted requests are stored in the database and displayed on the web page under subject categories in a neat way.
 
 Moderators are “approved” by other moderators (application process). E.g. an admin acct approves a request for a moderator account. 
+
+
+## URL paths:
+
+/ - homepage, contains general overview and such
+/archive - database of study materials

@@ -166,7 +166,7 @@ def wipeAccounts():
 def archive():
     # logic.wipeRows()
     # logic.wipeSubjects()
-    logic.wipeEverything()
+    # logic.wipeEverything()
     # logic.printAllRows()
     # wipeAccounts()
 

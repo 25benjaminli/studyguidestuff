@@ -14,4 +14,14 @@ Moderators are “approved” by other moderators (application process). E.g. an
 ## URL paths:
 
 / - homepage, contains general overview and such
+
+
 /archive - database of study materials
+
+
+/login - log in as a moderator
+
+
+/logged_in - moderator homepage for managing submissions
+
+

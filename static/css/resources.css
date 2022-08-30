@@ -11,7 +11,7 @@ p
 a:hover 
    {color: rgb(47, 100, 244);}
 
-/* Screen is in landscape */
+/* ————————————————— Screen is in landscape ————————————————— */
 @media only screen and (orientation: landscape){
 
 #text-txt 
@@ -80,7 +80,7 @@ th
 }
 
   
-/* Screen is in portrait */
+/* ————————————————— Screen is in portrait ————————————————— */
 @media only screen and (orientation: portrait) {
 
 #text-txt 
@@ -174,8 +174,8 @@ table
 th
    {background-color: rgb(239,239,240);}
 }
-
 }
+
 
 
 
@@ -199,7 +199,7 @@ a:visited
 a:hover 
   {color: rgb(92, 135, 255);}
 
-/* Screen is in landscape */
+/* ————————————————— Screen is in landscape ————————————————— */
 @media only screen and (orientation: landscape){
 
 #text-txt 
@@ -272,7 +272,7 @@ th
 }
 
   
-/* Screen is in portrait */
+/* ————————————————— Screen is in portrait ————————————————— */
 @media only screen and (orientation: portrait) {
 
 #text-txt 

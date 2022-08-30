@@ -12,14 +12,14 @@ CREATE TABLE `row` (
     `type` varchar(128) NOT NULL,
     `contributors` varchar(128) NOT NULL,
     `subjectId` varchar(128) NOT NULL,
-    `isaccepted` tinyint DEFAULT 0
+    `isaccepted` INTEGER DEFAULT 0
 );
 
 
 CREATE TABLE `subject` (
     `subjectId` INTEGER PRIMARY KEY NOT NULL,
-    `subjectName` varchar(128) NOT NULL
-
+    `subjectName` varchar(128) NOT NULL,
+    `category` varchar(128) NOT NULL
 );
 
 CREATE TABLE `moderator` (

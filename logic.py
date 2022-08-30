@@ -31,7 +31,8 @@ def wipeEverything():
     wipeRows()
     wipeSubjects()
 
-def processInfo(subjectName, title, url, typ, contributors):
+
+def processInfo(subjectName, title, url, typ, contributors, category):
     # create subject if it doesn't exist
     subjectId = 0
     zz = conn.execute("SELECT COUNT(subjectName) FROM subject WHERE subjectName = \"" + str(subjectName) + "\"").fetchone()[0]
@@ -47,7 +48,7 @@ def processInfo(subjectName, title, url, typ, contributors):
         print("subject name: " + subjectName)
         ct = int(conn.execute("SELECT COUNT(*) FROM subject").fetchone()[0])
         print(str(ct))
-        conn.execute("INSERT INTO subject values (?, ?)", (str(ct), subjectName,))
+        conn.execute("INSERT INTO subject values (?, ?, ?)", (str(ct), subjectName, category))
         conn.commit()
 
         subjectId = ct
@@ -80,22 +81,44 @@ def editSubjWithId(id):
     pass
 def getEverything():
     subjects = conn.execute("SELECT subjectId FROM subject").fetchall()
+  
     subjectNames = conn.execute("SELECT subjectName FROM subject").fetchall()
+  
+    categories = conn.execute("SELECT category FROM subject").fetchall()
+  
     rows = conn.execute("SELECT * FROM row").fetchall()
+  
     print("subjects:")
     print(subjects)
     print("names:")
     print(subjectNames)
     print("rows:")
     print(rows)
-    arr = [] # hold subject name
-    for (sid, sname) in zip(subjects, subjectNames):
-        if int(conn.execute("SELECT COUNT(*) FROM row WHERE isaccepted = 1 AND subjectId = " + str(sid[0])).fetchone()[0]) == 1:
-            # if it is accepted
+    arr = [] # hold everything
+    di = {}
+    for category in categories: # overarching category
+      # two categories - Science & Other
+      subjectArr = []
+      print("hi")
+      for (sid, sname) in zip(subjects, subjectNames): # for each subject
+        # two subjects - AP Biology & 10th grade electives
+        
+          if int(conn.execute("SELECT COUNT(*) FROM row WHERE isaccepted = 1 AND subjectId = " + str(sid[0])).fetchone()[0]) >= 1:
+            
+            print("category: ")
+            print(category[0])
             print(sid, sname)
-            r = conn.execute("SELECT * FROM row WHERE subjectId = " + str(sid[0])).fetchall()
-            arr.append([sname[0], (r)])
-    
+            print(conn.execute("SELECT r.*, s.category FROM row r, subject s WHERE r.subjectId = s.subjectId AND s.category == \"" + str(category[0]) + "\"").fetchall())
+            r = conn.execute("SELECT r.* FROM row r, subject s WHERE r.subjectId = s.subjectId AND s.category == \"" + str(category[0]) + "\" AND isaccepted = 1").fetchall()
+            print("RNAME")
+            rname = conn.execute("SELECT s.subjectName FROM row r, subject s WHERE r.subjectId = s.subjectId AND s.category == \"" + str(category[0]) + "\" AND isaccepted = 1").fetchall()
+            print(rname)
+            if len(r) > 0 and di.get(rname[0][0], 1) == 1:
+              subjectArr.append([rname[0][0], (r), category[0]])
+              di[rname[0][0]] = 0;
+      print("ARRRRRR")
+      print(subjectArr)
+      arr.append([category[0], subjectArr])
     print(arr)
     
     return arr
@@ -105,18 +128,25 @@ def getEverything():
 
 
 def checkEmail(email):
-    appr = int(conn.execute("SELECT isapproved FROM moderator WHERE email = ?", ((email),)).fetchone()[0])
+  # print(conn.execute("SELECT isapproved FROM moderator WHERE email = ?", ((email),)).fetchone())
+  print(conn.execute("SELECT * from moderator").fetchall())
+  if conn.execute("SELECT isapproved FROM moderator WHERE email = ?", ((email),)).fetchone() != None:
+    
+    asdf = conn.execute("SELECT isapproved FROM moderator WHERE email = ?", ((email),)).fetchone()[0]
+    appr = int(asdf)
     modId = int(conn.execute("SELECT id FROM moderator WHERE email = ?", ((email),)).fetchone()[0])
 
     print("isapproved: " + str(appr))
     print("modid: " + str(modId))
 
     return (appr, modId)
+  else:
+    return False
 
 
-def createAndAuth(email, passw):
-    conn.execute("INSERT INTO moderator values (NULL, ?, ?, ?)", ((email), (generate_password_hash(passw, method="sha256")), (1)))
-    conn.commit()
+# def createAndAuth(email, passw):
+#     conn.execute("INSERT INTO moderator values (NULL, ?, ?, ?)", ((email), (generate_password_hash(passw, method="sha256")), (1)))
+#     conn.commit()
 
 def getPassHash(email):
     x = conn.execute("SELECT passw FROM moderator WHERE email = ?", ((email),)).fetchone()[0]

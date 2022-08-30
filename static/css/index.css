@@ -15,7 +15,7 @@ p
   {border-top: 1px solid rgb(220, 220, 220);
    padding-top: 10px}
 
-/* Screen is in landscape */
+/* ————————————————— Screen is in landscape ————————————————— */
 @media only screen and (orientation: landscape){
 
 #text-txt 
@@ -189,8 +189,9 @@ p
    overflow: scroll;}
 
 }
-
 }
+
+
 
 
 /* Dark Mode */
@@ -206,10 +207,10 @@ body
 p
   {line-height: 1.35;}
 #about-the-server 
-  {border-top: 1px solid rgb(220, 220, 220);
+  {border-top: 1px solid rgb(75,75,80);
    padding-top: 10px}
 
-/* Screen is in landscape */
+/* ————————————————— Screen is in landscape ————————————————— */
 @media only screen and (orientation: landscape){
 
 #text-txt 
@@ -265,7 +266,6 @@ p
 .navLinks a:hover 
   {background-color: rgb(65,65,70);}
 
-
 /* Website Updates Scroller */
 .websiteUpdates
   {background-color: rgb(40,40,45);
@@ -286,7 +286,7 @@ p
 
 }
 
-/* Screen is in portrait */
+/* ————————————————— Screen is in portrait ————————————————— */
 @media only screen and (orientation: portrait) {
 
 #text-txt 

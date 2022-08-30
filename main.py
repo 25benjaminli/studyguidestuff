@@ -49,36 +49,41 @@ db.session.commit()
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
-    
     if request.method == 'POST':
         email = request.form['email']
         passw = request.form['password']
+        print(email)
         appr = logic.checkEmail(email) # is approved, id
-        if appr[0]:
-            print("a")
-            if check_password_hash(logic.getPassHash(email), passw):
-                print("b")
-
-                print("-------------------------")
-                print("--- successful login! ---")
-                print("-------------------------")
-
-                usr = User.query.filter_by(id=appr[1]).first()
-                print(usr)
-
-                login_user(usr, remember=True)
-
-                print("logged in finally!")
-                return redirect('/logged_in')
-
-            else:
-                flash("invalid username or password", "error")
-                return redirect('/login')
+        if not appr:
+          # add login failure
+          print("oops")
+          return redirect('/login')
         else:
-            print("-------------------------")
-            print("--- mod not approved! ---")
-            print("-------------------------")
-            return redirect('/login')
+          if appr[0]:
+                print("a")
+                if check_password_hash(logic.getPassHash(email),                         passw):
+                    print("b")
+    
+                    print("-------------------------")
+                    print("--- successful login! ---")
+                    print("-------------------------")
+    
+                    usr = User.query.filter_by(id=appr[1]).first()
+                    print(usr)
+    
+                    login_user(usr, remember=True)
+    
+                    print("logged in finally!")
+                    return redirect('/logged_in')
+    
+                else:
+                    flash("invalid username or password", "error")
+                    return redirect('/login')
+          else:
+              print("-------------------------")
+              print("--- mod not approved! ---")
+              print("-------------------------")
+              return redirect('/login')
 
     else:
         return render_template('login.html')
@@ -150,6 +155,8 @@ def index():
     logic.getAllCells("english")
     logic.getAllCells("math")
     logic.getAllCells("science")
+    # wipeAccounts()
+    print(conn.execute("SELECT * FROM moderator").fetchall())
     
     return render_template('index.html')
 
@@ -172,7 +179,6 @@ def archive():
     # wipeAccounts()
     
     
-    # createAndAuth("25benjaminli@gmail.com", "test")
     print(conn.execute("SELECT * FROM moderator").fetchall())
 
     return render_template('archive.html', info = info)
@@ -188,14 +194,15 @@ def resources():
 def submit():
     # logic.wipeRows()
     if request.method == 'POST':
-        subject = request.form['subject']
+        subject = request.form['subject'].split(",")[0]
+        category = request.form['subject'].split(",")[1]
         title = request.form['title']
         url = request.form['url']
         typ = request.form['type']
         contributors = request.form['contributors']
         print(subject, title, typ, contributors)
         # create a row under the specified subject.
-        logic.processInfo(subject, title, url, typ, contributors)
+        logic.processInfo(subject, title, url, typ, contributors, category)
         return redirect('/archive')
     elif request.method == 'GET':
         return render_template('submit-item.html')

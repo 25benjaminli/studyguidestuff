@@ -25,7 +25,8 @@
     color: #000000;
     background-color: white;
   }
-   
+
+  
 body 
   {background-color: rgb(255, 255, 255);
    color: black;
@@ -71,11 +72,17 @@ ul
    {color: rgb(201, 158, 22);}
 .french 
    {color: rgb(44, 85, 199);}
+.mandarin
+  {color: rgb(214, 0, 0);}
+.italian
+  {color: rgb(29, 149, 53);}
+.latin
+  {color: rgb(195, 44, 125);}
 a:hover 
    {color: rgb(47, 100, 244);}
 
 
-/* Screen is in landscape */
+/* ————————————————— Screen is in landscape ————————————————— */
 @media only screen and (orientation: landscape){
 
 #text-txt 
@@ -169,7 +176,7 @@ th
    cursor: pointer;
    padding-left: 8px;
    padding-right: 8px;
-   width: 22%;
+   width: 30%;
    border: 1px solid rgb(220, 220, 220);
    text-align: center;
    outline: none;
@@ -184,7 +191,7 @@ th
 }
 
 
-/* Screen is in portrait */
+/* ————————————————— Screen is in portrait ————————————————— */
 @media only screen and (orientation: portrait) {
 
 #text-txt 
@@ -353,27 +360,33 @@ p
   {padding: 10px;
    padding-bottom: 0px}
 #math 
-  {border-top: 1px solid rgb(220, 220, 220);
+  {border-top: 1px solid rgb(75,75,80);
    padding-top: 10px}
 #social-studies 
-  {border-top: 1px solid rgb(220, 220, 220);
+  {border-top: 1px solid rgb(75,75,80);
    padding-top: 10px}
 #science 
-  {border-top: 1px solid rgb(220, 220, 220);
+  {border-top: 1px solid rgb(75,75,80);
    padding-top: 10px}
 #english 
-  {border-top: 1px solid rgb(220, 220, 220);
+  {border-top: 1px solid rgb(75,75,80);
    padding-top: 10px}
 #world-language  
-  {border-top: 1px solid rgb(220, 220, 220);
+  {border-top: 1px solid rgb(75,75,80);
    padding-top: 10px}
 #other 
-  {border-top: 1px solid rgb(220, 220, 220);
+  {border-top: 1px solid rgb(75,75,80);
    padding-top: 10px}
 .spanish 
   {color: rgb(201, 158, 22);}
 .french 
   {color: rgb(61, 113, 255);}
+.mandarin
+  {color: rgb(255, 0, 0);}
+.italian
+  {color: rgb(50, 195, 79);}
+.latin
+  {color: rgb(221, 54, 143);}
 a:link
   {color: rgb(143, 180, 255)}
 a:visited
@@ -382,7 +395,7 @@ a:hover
   {color: rgb(92, 135, 255);}
 
 
-/* Screen is in landscape */
+/* ————————————————— Screen is in landscape ————————————————— */
 @media only screen and (orientation: landscape){
 
 #text-txt 
@@ -479,7 +492,7 @@ th
    cursor: pointer;
    padding-left: 8px;
    padding-right: 8px;
-   width: 22%;
+   width: 30%;
    border: 1px solid rgb(75, 75, 80);
    text-align: center;
    outline: none;
@@ -494,7 +507,7 @@ th
   
 }
 
-/* Screen is in portrait */
+/* ————————————————— Screen is in portrait ————————————————— */
 @media only screen and (orientation: portrait) {
 
 #text-txt 

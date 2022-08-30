@@ -20,31 +20,7 @@
 
 
       
-      {% for i in info %}
-        {% set name = i[0] %}
-        {% set rows = i[1] %}
-        <!-- <h1>{{name}}</h1> -->
-
-        <button type="button" class="collapsibleThree"><h3>{{name}}</h3></button> 
-        <div class = "contentTwo">
-        <table>
-        
-        <tr>
-          <th>Title</th>
-          <th>Type</th>
-          <th>Creators(s)</th>
-        </tr>
-        {% for r in rows %}
-          <tr>
-            <td><a href ={{r[2]}} target = "_blank">{{r[1]}}</a></td>
-            <td>{{r[3]}}</td>
-            <td>{{r[4]}}</td>
-          </tr>
-        {% endfor %}
-        </table>
-        </div>
-        <br>
-      {% endfor %}
+      
     
 
     <!-- Table of Contents -->
@@ -67,7 +43,36 @@
     </ul></div></div>
 
 
+      {% for category in info %}
+        <h1 id = {{category[0]}}>{{category[0]}}</h1>
+        <br>
+        {% for subject in category[1] %}
+        {% if subject[2] == category[0] %}
+          {% set name = subject[0] %}
+          {% set rows = subject[1] %}
 
+        <button type="button" class="collapsibleThree"><h3>{{name}}</h3></button> 
+        <div class = "contentTwo">
+        <table>
+        
+        <tr>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Creators(s)</th>
+        </tr>
+        {% for r in rows %}
+          <tr>
+            <td><a href ={{r[2]}} target = "_blank">{{r[1]}}</a></td>
+            <td>{{r[3]}}</td>
+            <td>{{r[4]}}</td>
+          </tr>
+        {% endfor %}
+        </table>
+        </div>
+        <br>
+      {% endif %}
+    {% endfor %}
+      {% endfor %}
     <!-- Math -->
     <h2 id="math">Math</h2>
     <button type="button" class="collapsibleThree"><h3 id="mathgr8">8th Grade (Algebra I)</h3></button> 
@@ -180,7 +185,26 @@
           <td>Benjamin L.</td>
         </tr>
       </tbody>
-     </table></div>
+    </table></div>
+    <br>
+
+    <button type="button" class="collapsibleThree"><h3 id="mathgr10">10th Grade (Algebra II)</h3></button> 
+    <div class="contentTwo"><table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Creator(s)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://drive.google.com/drive/folders/1BvlDv1wbJiDQ522_2EKHh9f4HF8tXnnW?usp=sharing" target="_blank">Algebra 2 Acc 2021-2022</a></td>
+          <td>Google Drive</td>
+          <td>aditheawesome</td>
+        </tr>
+      </tbody>
+    </table></div>
     
 
 
@@ -647,7 +671,23 @@
           <td>A𝖗𝖈𝖆𝖓𝖊Luminescence</td>
         </tr>
       </tbody>
-     </table></div>
+    </table></div>
+    <br>
+
+    <button type="button" class="collapsibleThree"><h3 id="socialstudiesgr10">10th Grade (US I & AP Euro)</h3></button>
+    <div class="contentTwo"><table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Creator(s)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        </tr>
+      </tbody>
+    </table></div>
 
 
 
@@ -1029,7 +1069,23 @@ https://github.com/benjason921/periodic_table">Molar Mass Calculator</a></td>
           <td>CricketCai</td>
         </tr>
       </tbody>
-     </table></div>
+    </table></div>
+    <br>
+
+    <button type="button" class="collapsibleThree"><h3 id="sciencegr10">10th Grade (Biology)</h3></button>
+    <div class="contentTwo"><table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Creator(s)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        </tr>
+      </tbody>
+    </table></div>
 
 
 
@@ -1135,7 +1191,23 @@ https://github.com/benjason921/periodic_table">Molar Mass Calculator</a></td>
           <td>N/A</td>
         </tr>
       </tbody>
-     </table></div>
+    </table></div>
+    <br>
+
+    <button type="button" class="collapsibleThree"><h3 id="englishgr10">10th Grade (American Lit)</h3></button>
+    <div class="contentTwo"><table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Creator(s)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        </tr>
+      </tbody>
+    </table></div>
 
 
     
@@ -1546,7 +1618,24 @@ https://github.com/benjason921/periodic_table">Molar Mass Calculator</a></td>
           <td>AnAnonymousPanda</td>
         </tr>
       </tbody>
-     </table></div>
+    </table></div>
+    <br>
+
+    <button type="button" class="collapsibleThree"><h3 id="worldlanguagegr10">10th Grade</h3></button>
+    <div class="contentTwo"><table>
+      <thead>
+        <tr>
+          <th>Language</th>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Creator(s)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        </tr>
+      </tbody>
+    </table></div>
 
 
 
@@ -1609,7 +1698,25 @@ https://github.com/benjason921/periodic_table">Molar Mass Calculator</a></td>
           <td>ChaoticSnorlax</td>
         </tr>
       </tbody>
-     </table></div>
+    </table></div>
+    <br>
+
+    <button type="button" class="collapsibleThree"><h3 id="othergr10">10th Grade</h3></button>
+    <div class="contentTwo"><table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Creator(s)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        </tr>
+      </tbody>
+    </table></div>
+  
     <p><a href="#top">Back to top</a></p>
     
 

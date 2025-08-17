@@ -180,8 +180,6 @@ def archive():
     print(conn.execute("SELECT * FROM moderator").fetchall())
 
     return render_template('archive.html', info = info)
-# @app.route('/archive-test', method = ['GET', 'POST'])
-# def archivetest():
     
 
 @app.route('/resources', methods = ['GET'])

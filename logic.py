@@ -58,12 +58,6 @@ def processInfo(subjectName, title, url, typ, contributors):
         subjectId = int(b)
         print("subject id exists: " + str(subjectId))
 
-    # create row with ID
-
-    # create cell under that row
-    print("hiel")
-    # printAllRows()
-
     conn.execute("INSERT INTO row values(NULL, ?, ?, ?, ?, ?, ?)", (str(title), str(url), str(typ), str(contributors), str(subjectId), str(0)))
 
     conn.commit()

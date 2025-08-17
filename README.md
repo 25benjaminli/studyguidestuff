@@ -1,7 +1,3 @@
-## Hello Mortals
-
-This is a study guide website. 
-
 Anybody can submit a request for a study guide material (e.g. a quizlet with a link for science). This is mainly to avoid spamming and abuse of the webpage, but if you think it is unnecessary and just want it to update automatically without request system, the "norequest" branch will have stuff.
 
 Moderators accept these requests from a homepage. 
@@ -23,5 +19,3 @@ Moderators are “approved” by other moderators (application process). E.g. an
 
 
 /logged_in - moderator homepage for managing submissions
-
-
